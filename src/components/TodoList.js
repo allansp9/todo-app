@@ -33,6 +33,7 @@ class TodoList extends React.Component {
 
     e.preventDefault();
   }
+
   deleteItem(key) {
     var filteredItems = this.state.items.filter(function (item) {
       return (item.key !== key);
@@ -43,16 +44,21 @@ class TodoList extends React.Component {
     });
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log('submit button clicked')
+  }
+
   render() {
     return (
       <div className="todoListMain">
         <div className="header">
-          <form onSubmit={this.addItem}>
+          <form>
             <input
               ref={(a) => this._inputElement = a}
               placeholder="enter task">
             </input>
-            <button type="submit">add</button>
+            <button onClick={this.handleSubmit.bind(this)}>add</button>
           </form>
         </div>
         <TodoItems entries={this.state.items}
