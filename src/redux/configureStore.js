@@ -1,5 +1,5 @@
 import { applyMiddleware, compose, createStore } from 'redux';
-import reducer from './reducers/todo-reducer';
+import reducer from './reducers/reducer';
 import { createLogger } from 'redux-logger'
 
 let finalCreateStore = compose(
