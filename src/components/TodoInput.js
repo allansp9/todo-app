@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import actions from '../redux/actions/index'
 
 class TodoInput extends Component {
   constructor(props, context) {
@@ -17,7 +16,7 @@ class TodoInput extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.dispatch(actions.addTodo(this.state.inputText))
+    this.props.addTodo(this.state.inputText)
   }
 
   render() {
