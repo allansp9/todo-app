@@ -4,6 +4,7 @@ import TodoInput from './TodoInput'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import actions from '../redux/actions/index'
+// import UserInfo from './components/UserInfo'
 
 
 class App extends Component {
@@ -11,6 +12,8 @@ class App extends Component {
   render() {
     return (
       <div>
+        <h1>Todo List</h1>
+        {/* <UserInfo/> */}
         <TodoInput addTodo={this.props.actions.addTodo} />
         <TodoList actions={this.props.actions} todos={this.props.todos}/>
       </div>
