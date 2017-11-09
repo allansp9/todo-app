@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div>
         <TodoInput dispatch={this.props.dispatch}/>
-        <TodoList todos={this.props.todos}/>
+        <TodoList dispatch={this.props.dispatch} todos={this.props.todos}/>
       </div>
     );
   }
