@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-
-class TodoItem extends React.Component {
+class TodoItem extends Component {
 
   handleComplete() {
     this.props.actions.completeTodo(this.props.todo.id)

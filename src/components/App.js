@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import TodoList from './TodoList'
-import TodoInput from './TodoInput'
+import TodoList from '../components/TodoList'
+import TodoInput from '../components/TodoInput'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import actions from '../redux/actions/index'
-// import UserInfo from './components/UserInfo'
-
+import actions from '../actions'
 
 class App extends Component {
 
@@ -13,7 +11,6 @@ class App extends Component {
     return (
       <div>
         <h1>Todo List</h1>
-        {/* <UserInfo/> */}
         <TodoInput addTodo={this.props.actions.addTodo} />
         <TodoList actions={this.props.actions} todos={this.props.todos}/>
       </div>
@@ -22,7 +19,9 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  return state
+  return {
+    todos: state.todos
+  }
 }
 
 function mapDispatchToProps(dispatch) {

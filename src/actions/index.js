@@ -1,22 +1,22 @@
-let actions = {
+const actions = {
   addTodo: (text) => {
     return {
       type: 'ADD_TODO',
-      text: text
+      payload: text
     }
   },
   completeTodo: (id) => {
     return {
       type: 'COMPLETE_TODO',
-      id: id
+      payload: id
     }
   },
   deleteTodo: (id) => {
     return {
       type: 'DELETE_TODO',
-      id: id
+      payload: id
     }
   }
-}
+};
 
-export default actions
+export default actions;

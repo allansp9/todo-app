@@ -4,26 +4,27 @@ function getId(todos) {
   }, -1) + 1
 }
 
-let todoReducer = (todos, action) => {
+const todoReducer = (todos = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [{
           id: getId(todos),
           completed: false,
-          text: action.text
+          text: action.payload
         }, ...todos]
+
     case 'COMPLETE_TODO':
       return todos.map((todo) => {
-        return todo.id === action.id ?
+        return todo.id === action.payload ?
           Object.assign({}, todo, {completed: !todo.completed}) : todo
       })
     case 'DELETE_TODO':
       return todos.filter((todo) => {
-        return todo.id !== action.id
+        return todo.id !== action.payload
       })
     default:
       return todos;
   }
 }
 
-export default todoReducer
+export default todoReducer;
