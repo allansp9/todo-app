@@ -10,16 +10,18 @@ class TodoInput extends Component {
 
   handleChange(e) {
     this.setState({
-      inputText: e.target.value
+      inputText: e.target.value.trim()
     });
   }
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.addTodo(this.state.inputText)
-    this.setState({
-      inputText: ''
-    });
+    if (this.state.inputText !== "") {
+      this.props.addTodo(this.state.inputText)
+      this.setState({
+        inputText: ''
+      });
+    }
   }
 
   render() {
