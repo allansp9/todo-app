@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+// import { ListItem } from 'material-ui/List';
+import ActionDone from 'material-ui/svg-icons/action/done';
+// import IconButton from 'material-ui/IconButton';
+import { TableRow, TableRowColumn } from 'material-ui/Table';
 
 class TodoItem extends Component {
 
@@ -12,11 +17,13 @@ class TodoItem extends Component {
 
     render() {
       return (
-        <li>
+        <TableRow>
+          <TableRowColumn>
           <p>{this.props.todo.text}</p>
-          <button onClick={this.handleComplete.bind(this)}>check</button>
+          <RaisedButton onClick={this.handleComplete.bind(this)} icon={<ActionDone />}></RaisedButton>
           <button onClick={this.handleDelete.bind(this)}>delete</button>
-        </li>
+          </TableRowColumn>
+        </TableRow>
       )
     }
   }

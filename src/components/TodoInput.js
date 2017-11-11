@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
 class TodoInput extends Component {
   constructor(props, context) {
@@ -28,12 +30,8 @@ class TodoInput extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <input type="text"
-                 placeholder="Type in your TODO"
-                 value={this.state.inputText}
-                 onChange={this.handleChange.bind(this)}
-          />
-          <button type="submit">Add</button>
+          <TextField hintText="add your TODO item" value={this.state.inputText} onChange={this.handleChange.bind(this)}></TextField>
+          <RaisedButton label="add" type="submit" />
         </form>
       </div>
     );

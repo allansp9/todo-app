@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import TodoItem from './TodoItem'
+// import { List } from 'material-ui/List';
+import { Table, TableBody } from 'material-ui/Table';
 
 class TodoList extends Component {
 
@@ -11,9 +13,11 @@ class TodoList extends Component {
 
   render() {
     return (
-      <ul>
+      <Table>
+        <TableBody>
         {this.createListItems()}
-      </ul>
+        </TableBody>
+      </Table>
     )
   }
 }
