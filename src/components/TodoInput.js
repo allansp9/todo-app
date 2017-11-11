@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import Button from 'material-ui/Button';
+import AddIcon from 'material-ui-icons/Add';
 
 class TodoInput extends Component {
   constructor(props, context) {
@@ -30,8 +31,20 @@ class TodoInput extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <TextField hintText="add your TODO item" value={this.state.inputText} onChange={this.handleChange.bind(this)}></TextField>
-          <RaisedButton label="add" type="submit" />
+          <TextField
+            value={this.state.inputText}
+            onChange={this.handleChange.bind(this)}
+            autoFocus
+            multiline
+            required
+            placeholder="ex: pagar conta de internet"
+          ></TextField>
+          <Button fab color="primary" aria-label="add" type="submit">
+            <AddIcon />
+          </Button>
+
+
+
         </form>
       </div>
     );

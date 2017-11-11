@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-// import { ListItem } from 'material-ui/List';
-import ActionDone from 'material-ui/svg-icons/action/done';
-// import IconButton from 'material-ui/IconButton';
-import { TableRow, TableRowColumn } from 'material-ui/Table';
+import IconButton from 'material-ui/IconButton';
+import DeleteIcon from 'material-ui-icons/Delete';
+import Done from 'material-ui-icons/Done';
+import Grid from 'material-ui/Grid';
+
 
 class TodoItem extends Component {
 
@@ -17,13 +17,17 @@ class TodoItem extends Component {
 
     render() {
       return (
-        <TableRow>
-          <TableRowColumn>
-          <p>{this.props.todo.text}</p>
-          <RaisedButton onClick={this.handleComplete.bind(this)} icon={<ActionDone />}></RaisedButton>
-          <button onClick={this.handleDelete.bind(this)}>delete</button>
-          </TableRowColumn>
-        </TableRow>
+        <div>
+          <Grid container>
+            <Grid item><p>{this.props.todo.text}</p></Grid>
+            <Grid item><IconButton onClick={this.handleComplete.bind(this)}><Done /></IconButton></Grid>
+            <Grid item>
+              <IconButton  aria-label="Delete" onClick={this.handleDelete.bind(this)} >
+                <DeleteIcon />
+              </IconButton>
+            </Grid>
+          </Grid>
+        </div>
       )
     }
   }
