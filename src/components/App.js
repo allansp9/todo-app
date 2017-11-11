@@ -8,15 +8,14 @@ import 'typeface-roboto';
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
 
+
 class App extends Component {
 
   render() {
 
-    const styles = {
-
-    }
 
     return (
+      <div>
         <Grid container direction="column">
           <Grid item>
             <Typography type="display2">TODO List</Typography>
@@ -28,6 +27,7 @@ class App extends Component {
             <TodoList actions={this.props.actions} todos={this.props.todos}/>
           </Grid>
         </Grid>
+      </div>
     );
   }
 }

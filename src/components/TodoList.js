@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
-import TodoItem from './TodoItem'
+import Grid from 'material-ui/Grid';
+import TodoItem from './TodoItem';
 
 
 class TodoList extends Component {
 
   createListItems() {
     return this.props.todos.map((todo) => {
-      return <TodoItem key={todo.id} todo={todo} actions={this.props.actions}/>
+      return (
+        <Grid item key={todo.id}>
+          <TodoItem todo={todo} actions={this.props.actions}/>
+        </Grid>
+      );
     })
   }
 
   render() {
     return (
-      <ul>
-        {this.createListItems()}
-      </ul>
+      <div>
+        <Grid container direction="column" spacing={24}>
+          {this.createListItems()}
+        </Grid>
+      </div>
     )
   }
 }
