@@ -3,12 +3,18 @@ import IconButton from 'material-ui/IconButton';
 import DeleteIcon from 'material-ui-icons/Delete';
 import Done from 'material-ui-icons/Done';
 import Grid from 'material-ui/Grid';
+import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 
 const styles = {
   item: {
     background: 'white',
     padding: 10,
+  },
+  text: {
+    background: 'grey',
+    overflowWrap: 'break-word',
+    maxWidth: 300,
   },
 };
 
@@ -32,7 +38,7 @@ class TodoItem extends Component {
       <div className={this.props.classes.item}>
         <Grid container alignItems="center" justify="space-between">
           <Grid item>
-            <p>{this.props.todo.text}</p>
+            <Typography className={this.props.classes.text}>{this.props.todo.text}</Typography>
           </Grid>
           <Grid item>
             <IconButton onClick={this.handleComplete}>

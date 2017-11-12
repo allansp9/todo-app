@@ -22,9 +22,11 @@ function mapDispatchToProps(dispatch) {
 const App = (props) => {
   return (
     <div>
-      <Grid container direction="column">
+      <Grid container direction="column" justify="center">
         <Grid item>
-          <Typography type="display2">TODO List</Typography>
+          <Typography type="display2" align="center">
+            TODO List
+          </Typography>
         </Grid>
         <Grid item>
           <TodoInput addTodo={props.actions.addTodo} />
