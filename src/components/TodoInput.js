@@ -9,6 +9,9 @@ class TodoInput extends Component {
     this.state = {
       inputText: '',
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
@@ -30,10 +33,10 @@ class TodoInput extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        <form onSubmit={this.handleSubmit}>
           <TextField
             value={this.state.inputText}
-            onChange={this.handleChange.bind(this)}
+            onChange={this.handleChange}
             autoFocus
             multiline
             required

@@ -4,7 +4,9 @@
     "react/jsx-filename-extension": 0,
     "no-use-before-define": 0,
     "linebreak-style": ["error", "windows"],
-    "arrow-body-style": ["error", "always"]
+    "arrow-body-style": ["error", "always"],
+    "require-default-props": 0,
+    "react/prop-types": 0
   },
   "globals": {
     "document": true,

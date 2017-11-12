@@ -13,6 +13,12 @@ const styles = {
 };
 
 class TodoItem extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.handleComplete = this.handleComplete.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
   handleComplete() {
     this.props.actions.completeTodo(this.props.todo.id);
   }
@@ -29,10 +35,10 @@ class TodoItem extends Component {
             <p>{this.props.todo.text}</p>
           </Grid>
           <Grid item>
-            <IconButton onClick={this.handleComplete.bind(this)}>
+            <IconButton onClick={this.handleComplete}>
               <Done color={this.props.todo.color} />
             </IconButton>
-            <IconButton aria-label="Delete" onClick={this.handleDelete.bind(this)}>
+            <IconButton aria-label="Delete" onClick={this.handleDelete}>
               <DeleteIcon />
             </IconButton>
           </Grid>
