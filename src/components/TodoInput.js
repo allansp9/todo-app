@@ -3,27 +3,26 @@ import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import AddIcon from 'material-ui-icons/Add';
 
-
 class TodoInput extends Component {
   constructor(props, context) {
-    super(props, context)
+    super(props, context);
     this.state = {
-      inputText: ''
-    }
+      inputText: '',
+    };
   }
 
   handleChange(e) {
     this.setState({
-      inputText: e.target.value.trim()
+      inputText: e.target.value.trim(),
     });
   }
 
   handleSubmit(e) {
-    e.preventDefault()
-    if (this.state.inputText !== "") {
-      this.props.addTodo(this.state.inputText)
+    e.preventDefault();
+    if (this.state.inputText !== '') {
+      this.props.addTodo(this.state.inputText);
       this.setState({
-        inputText: ''
+        inputText: '',
       });
     }
   }
@@ -39,17 +38,14 @@ class TodoInput extends Component {
             multiline
             required
             placeholder="Ex: pagar contas"
-          ></TextField>
+          />
           <Button fab color="primary" aria-label="add" type="submit">
             <AddIcon />
           </Button>
-
-
-
         </form>
       </div>
     );
   }
 }
 
-export default TodoInput
+export default TodoInput;
