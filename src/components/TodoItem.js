@@ -40,10 +40,6 @@ class TodoItem extends Component {
   }
 
   render() {
-    const itemStyle = {
-      borderColor: this.props.todo.color,
-    };
-
     return (
       <div className={this.props.classes.item}>
         <Grid container alignItems="center" justify="space-between">
