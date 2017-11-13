@@ -8,11 +8,15 @@ import { withStyles } from 'material-ui/styles';
 
 const styles = {
   item: {
-    background: 'white',
+    background: '#66c3ff',
     padding: 10,
+    borderRadius: 10,
+    border: '2px solid #EEEEEE',
+    '&:hover': {
+      background: '#5db2e8',
+    },
   },
   text: {
-    background: 'grey',
     overflowWrap: 'break-word',
     maxWidth: 300,
   },
@@ -34,11 +38,15 @@ class TodoItem extends Component {
   }
 
   render() {
+    const itemStyle = {
+      borderColor: this.props.todo.color,
+    };
+
     return (
-      <div className={this.props.classes.item}>
+      <div className={this.props.classes.item} style={itemStyle}>
         <Grid container alignItems="center" justify="space-between">
           <Grid item>
-            <Typography className={this.props.classes.text}>{this.props.todo.text}</Typography>
+            <p className={this.props.classes.text}>{this.props.todo.text}</p>
           </Grid>
           <Grid item>
             <IconButton onClick={this.handleComplete}>

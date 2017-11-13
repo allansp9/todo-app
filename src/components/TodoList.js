@@ -16,7 +16,7 @@ class TodoList extends Component {
   render() {
     return (
       <div>
-        <Grid container direction="column" spacing={24}>
+        <Grid container direction="column" spacing={8}>
           {this.createListItems()}
         </Grid>
       </div>

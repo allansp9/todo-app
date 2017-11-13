@@ -10,18 +10,18 @@ const todoReducer = (todos = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [
+        ...todos,
         {
           id: getId(todos),
           text: action.payload,
-          color: 'grey',
+          color: '#EEEEEE',
         },
-        ...todos,
       ];
 
     case 'COMPLETE_TODO':
       return todos.map((todo) => {
         return todo.id === action.payload
-          ? Object.assign({}, todo, { color: todo.color === 'grey' ? 'green' : 'grey' })
+          ? Object.assign({}, todo, { color: todo.color === '#EEEEEE' ? 'green' : '#EEEEEE' })
           : todo;
       });
     case 'DELETE_TODO':
