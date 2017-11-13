@@ -9,13 +9,14 @@ import Tooltip from 'material-ui/Tooltip';
 
 const styles = {
   item: {
-    background: '#66c3ff',
+    background: '#5db2e8',
     padding: 10,
     borderRadius: 10,
-    border: '2px solid #EEEEEE',
     '&:hover': {
-      background: '#5db2e8',
+      background: '#54a0d1',
     },
+    boxShadow:
+      ' 0px 1px 5px 0px rgba(0, 0, 0, 0.2),0px 2px 2px 0px rgba(0, 0, 0, 0.14),0px 3px 1px -2px rgba(0, 0, 0, 0.12)',
   },
   text: {
     overflowWrap: 'break-word',
@@ -44,8 +45,8 @@ class TodoItem extends Component {
     };
 
     return (
-      <div className={this.props.classes.item} style={itemStyle}>
-        <Grid container alignItems="flex-start" justify="space-between">
+      <div className={this.props.classes.item}>
+        <Grid container alignItems="center" justify="space-between">
           <Grid item xs={12} sm={10}>
             <Typography className={this.props.classes.text}>{this.props.todo.text}</Typography>
           </Grid>
