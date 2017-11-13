@@ -5,6 +5,7 @@ import Done from 'material-ui-icons/Done';
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
+import Tooltip from 'material-ui/Tooltip';
 
 const styles = {
   item: {
@@ -18,7 +19,7 @@ const styles = {
   },
   text: {
     overflowWrap: 'break-word',
-    maxWidth: 300,
+    whiteSpace: 'pre-line',
   },
 };
 
@@ -44,17 +45,21 @@ class TodoItem extends Component {
 
     return (
       <div className={this.props.classes.item} style={itemStyle}>
-        <Grid container alignItems="center" justify="space-between">
-          <Grid item>
-            <p className={this.props.classes.text}>{this.props.todo.text}</p>
+        <Grid container alignItems="flex-start" justify="space-between">
+          <Grid item xs={12} sm={10}>
+            <Typography className={this.props.classes.text}>{this.props.todo.text}</Typography>
           </Grid>
-          <Grid item>
-            <IconButton onClick={this.handleComplete}>
-              <Done color={this.props.todo.color} />
-            </IconButton>
-            <IconButton aria-label="Delete" onClick={this.handleDelete}>
-              <DeleteIcon />
-            </IconButton>
+          <Grid item xs={12} sm={2}>
+            <Tooltip id="complete" title="Concluir" placement="left-start">
+              <IconButton onClick={this.handleComplete}>
+                <Done color={this.props.todo.color} />
+              </IconButton>
+            </Tooltip>
+            <Tooltip id="delete" title="Excluir" placement="left-start">
+              <IconButton aria-label="Delete" onClick={this.handleDelete}>
+                <DeleteIcon />
+              </IconButton>
+            </Tooltip>
           </Grid>
         </Grid>
       </div>

@@ -21,14 +21,19 @@ function mapDispatchToProps(dispatch) {
 
 const App = (props) => {
   const styles = {
-    maxWidth: 500,
-    width: '100vw',
+    container: {
+      maxWidth: 500,
+      width: '100vw',
+    },
+    header: {
+      marginBottom: 30,
+    },
   };
   return (
     <div>
-      <Grid container direction="column" justify="center" style={styles}>
+      <Grid container direction="column" justify="center" style={styles.container}>
         <Grid item>
-          <Typography type="display2" align="center">
+          <Typography type="display2" align="center" style={styles.header}>
             TODO List
           </Typography>
         </Grid>

@@ -32,22 +32,26 @@ class TodoInput extends Component {
   }
 
   render() {
+    const style = {
+      button: {
+        width: '100%',
+      },
+    };
     return (
       <form onSubmit={this.handleSubmit}>
         <Grid container alignItems="flex-end" justify="space-between">
-          <Grid item xs={9}>
+          <Grid item xs={12}>
             <TextField
               value={this.state.inputText}
               onChange={this.handleChange}
-              autoFocus
               multiline
               required
               placeholder="Ex: pagar contas"
               fullWidth
             />
           </Grid>
-          <Grid item>
-            <Button raised color="primary" aria-label="add" type="submit">
+          <Grid item xs={12}>
+            <Button raised color="primary" aria-label="add" type="submit" style={style.button}>
               <AddIcon />
             </Button>
           </Grid>
