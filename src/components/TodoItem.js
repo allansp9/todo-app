@@ -21,6 +21,8 @@ const styles = {
   text: {
     overflowWrap: 'break-word',
     whiteSpace: 'pre-line',
+    font: '500 20px Calibri',
+    paddingLeft: 10,
   },
 };
 
