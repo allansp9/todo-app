@@ -6,7 +6,7 @@ class TodoList extends Component {
   createListItems() {
     return this.props.todos.map((todo) => {
       return (
-        <Grid item key={todo.id}>
+        <Grid item xs={12} key={todo.id}>
           <TodoItem todo={todo} actions={this.props.actions} />
         </Grid>
       );
@@ -14,13 +14,7 @@ class TodoList extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <Grid container direction="column" spacing={8}>
-          {this.createListItems()}
-        </Grid>
-      </div>
-    );
+    return <Grid container>{this.createListItems()}</Grid>;
   }
 }
 

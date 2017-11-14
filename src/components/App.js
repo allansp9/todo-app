@@ -22,39 +22,28 @@ function mapDispatchToProps(dispatch) {
 }
 
 const App = (props) => {
-  const styles = {
-    container: {
-      maxWidth: 500,
-      width: '100vw',
-    },
-    header: {
-      marginBottom: 30,
-    },
-  };
   return (
-    <div>
-      <Grid container direction="column" justify="center" style={styles.container}>
-        <Grid item>
-          <Typography type="display2" align="center" style={styles.header}>
-            TODO List
-          </Typography>
-        </Grid>
-        <Grid item>
-          <TodoInput addTodo={props.actions.addTodo} />
-        </Grid>
-        <Grid item container justify="center">
-          <IconButton href="https://github.com/allansp9" target="_blank" rel="noopener noreferrer">
-            <GithubCircle />
-          </IconButton>
-          <IconButton href="mailto:allansp9@gmail.com">
-            <Email />
-          </IconButton>
-        </Grid>
-        <Grid item>
-          <TodoList actions={props.actions} todos={props.todos} />
-        </Grid>
+    <Grid container direction="column" justify="center">
+      <Grid item>
+        <Typography type="display3" align="center">
+          TODO List
+        </Typography>
       </Grid>
-    </div>
+      <Grid item>
+        <TodoInput addTodo={props.actions.addTodo} />
+      </Grid>
+      <Grid item container justify="center">
+        <IconButton href="https://github.com/allansp9" target="_blank" rel="noopener noreferrer">
+          <GithubCircle />
+        </IconButton>
+        <IconButton href="mailto:allansp9@gmail.com">
+          <Email />
+        </IconButton>
+      </Grid>
+      <Grid item>
+        <TodoList actions={props.actions} todos={props.todos} />
+      </Grid>
+    </Grid>
   );
 };
 

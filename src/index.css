@@ -2,8 +2,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: 100vh;
-  margin: 0;
   background-color: #66ccff;
   font-family: "Roboto", sans-serif;
 }
@@ -12,4 +10,7 @@ body {
   justify-content: center;
   position: absolute;
   top: 20%;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
 }

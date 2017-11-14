@@ -39,7 +39,7 @@ class TodoInput extends Component {
     };
     return (
       <form onSubmit={this.handleSubmit}>
-        <Grid container alignItems="flex-end" justify="space-between">
+        <Grid container direction="column">
           <Grid item xs={12}>
             <TextField
               value={this.state.inputText}
